@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0c0d10;
+    color: #ffffff;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #0f1115;
+    border-right: 1px solid #1a1d24;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-area {
+    margin-bottom: 48px;
+    padding-left: 12px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #2a2e3a 0%, #1a1d24 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #e0e0e0;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: #7f8493;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background: #1a1d24;
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background: #1a1d24;
+    color: #ffffff;
+}
+
+.nav-svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #1a1d24;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 32px 40px;
+    background: #0c0d10;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.top-header h1 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #7f8493;
+}
+
+.validation-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    background: #10b981;
+    border-radius: 20px;
+    color: white;
+}
+
+.validation-badge.invalid {
+    background: #ef4444;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #7f8493;
+    margin-bottom: 16px;
+}
+
+/* Balance Card */
+.balance-card {
+    background: #12141a;
+    border: 1px solid #1e2128;
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.balance-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #7f8493;
+    margin-bottom: 12px;
+}
+
+.balance-amount {
+    font-size: 42px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.card-metadata {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #7f8493;
+}
+
+/* Transaction Table */
+.table-card-wrapper {
+    background: #12141a;
+    border: 1px solid #1e2128;
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.transaction-table th {
+    text-align: left;
+    padding: 16px 20px;
+    color: #7f8493;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #1e2128;
+}
+
+.transaction-table td {
+    padding: 14px 20px;
+    color: #e0e0e0;
+    border-bottom: 1px solid #1a1d24;
+}
+
+.transaction-table tr:last-child td {
+    border-bottom: none;
+}
+
+.transaction-table tr:hover td {
+    background: #1a1d24;
+}
+
+/* Amount styling */
+.tx-positive {
+    color: #10b981;
+}
+
+.tx-negative {
+    color: #ef4444;
+}
+
+.status-badge {
+    color: #10b981;
+    font-size: 12px;
+}
+
+.status-badge.failed {
+    color: #ef4444;
+}
+
+/* Action Panels */
+.glass-action-panel {
+    background: #12141a;
+    border: 1px solid #1e2128;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.panel-heading {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.field-container {
+    margin-bottom: 20px;
+}
+
+.field-label {
+    display: block;
+    font-size: 12px;
+    color: #7f8493;
+    margin-bottom: 8px;
+}
+
+.input-glow-box {
+    position: relative;
+}
+
+.currency-indicator {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8493;
+    font-size: 14px;
+}
+
+.input-glow-box input {
+    width: 100%;
+    background: #0c0d10;
+    border: 1px solid #2a2e38;
+    border-radius: 12px;
+    padding: 12px 12px 12px 28px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Inter', monospace;
+    outline: none;
+}
+
+.input-glow-box input:focus {
+    border-color: #3a3f4a;
+}
+
+.input-glow-box input::placeholder {
+    color: #3a3f4a;
+}
+
+/* Buttons */
+.neon-action-btn {
+    width: 100%;
+    background: #1a1d24;
+    border: 1px solid #2a2e38;
+    border-radius: 12px;
+    padding: 12px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.neon-action-btn:hover {
+    background: #22262f;
+    border-color: #3a3f4a;
+}
+
+.neon-action-btn:active {
+    transform: scale(0.98);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast.success {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.toast.error {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .balance-amount {
+        font-size: 32px;
+    }
+    .transaction-table th,
+    .transaction-table td {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
