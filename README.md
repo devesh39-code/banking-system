@@ -1,2 +1,15 @@
-# banking-system
-A banking system featuring a Python Flask backend and a modern, professional dashboard UI. Includes deposit, withdrawal, transaction history, and account validation functionality.
+# Banking System
+
+A modern fintech banking dashboard with deposit, withdraw, and transaction history.
+
+Features
+Deposit money
+Withdraw money with balance validation
+Transaction history
+Account validation
+Premium dark theme UI
+
+Tech Stack
+Backend: Python (Flask)
+Frontend: HTML, CSS, JavaScript
+
