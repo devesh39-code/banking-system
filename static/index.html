@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <div class="logo-icon">B</div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#" class="nav-item active" data-tab="dashboard">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="transactions">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                    <span>Accounts</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>BANKING SYSTEM DASHBOARD</h1>
+                <div id="validation-badge" class="validation-badge"></div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <div>
+                        <div class="section-title">BALANCE CARD</div>
+                        <div class="balance-card">
+                            <div class="balance-label">AVAILABLE BALANCE</div>
+                            <div class="balance-amount" id="balanceDisplay">$0.00</div>
+                            <div class="card-metadata">
+                                <span id="accountType">Savings Account</span>
+                                <span>•</span>
+                                <span id="accountNumber">**** 0000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">RECENT TRANSACTIONS</div>
+                        <div class="table-card-wrapper">
+                            <table class="transaction-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transactionRows">
+                                    <tr><td colspan="5" style="text-align:center; padding:40px;">Loading transactions...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <div class="section-title">ACTIONS</div>
+                    
+                    <div class="glass-action-panel">
+                        <div class="panel-heading">Deposit</div>
+                        <div class="field-container">
+                            <label class="field-label">Enter amount</label>
+                            <div class="input-glow-box">
+                                <span class="currency-indicator">$</span>
+                                <input type="number" id="depositAmount" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                        <button id="depositBtn" class="neon-action-btn">DEPOSIT FUNDS</button>
+                    </div>
+
+                    <div class="glass-action-panel">
+                        <div class="panel-heading">Withdrawal</div>
+                        <div class="field-container">
+                            <label class="field-label">Enter amount</label>
+                            <div class="input-glow-box">
+                                <span class="currency-indicator">$</span>
+                                <input type="number" id="withdrawAmount" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                        <button id="withdrawBtn" class="neon-action-btn">WITHDRAW FUNDS</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
